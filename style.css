@@ -2,7 +2,7 @@
   color: red;
 }
 
-body { background-image: url("./pics/1.jpg");}
+body { background-image: url("./pics/bg.jpg");}
 
 .button {
     -webkit-transition-duration: 0.4s; /* Safari */
