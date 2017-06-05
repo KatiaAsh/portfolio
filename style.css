@@ -10,7 +10,7 @@ body { background-image: url("../pics/1.jpg");}
 }
 
 .button:hover {
-    background-color: Grey; /* Green */
+    background-color: #4CAF50; /* Green */
     color: white;
 }
 
@@ -18,9 +18,7 @@ p {
   color: grey;
 }
 
-h2 {
-  color: pink;
-}
+
 
 button {
 display: inline-block;
@@ -44,3 +42,14 @@ background-color: #3e8e41;
 box-shadow: 0 5px #666;
 transform: translateY(4px);
 }
+
+p.small {
+    font-variant: small-caps;
+}
+
+p {
+  font-family: serif;
+}
+div.image {
+   content:url("../pics/BrunoMars.jpg");
+}​

@@ -6,59 +6,39 @@
     <title></title>
   </head>
   <body onclick="enableMute()">
-
-    <link rel="shortcut icon" type="image/png" href="img/favicon"/>
+<style>
+div {
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+}
+</style>
  <center>
     <h1 class="katia">Music</h1>
       <marquee behavior="alternate" width="400" bgcolor="pink">Turn up the volume <3</marquee>
     <h2>​Discover My​ Music</h2>
-    <p>Get The Scoop Or Get The Top Music</p>
-    <p>​Welcome to Music.—because I have so much music I want to share with you. I’m here to make a life out of what I love. I am passionate about Music, and I truly believe that passion is relayed back to my readers through the innovative and exciting content that I post.</p>
+    <p class="normal">Get The Scoop Or Get The Top Music</p>
+    <p class="normal">​Welcome to Music.—because I have so much music I want to share with you. I’m here to make a life out of what I love. I am passionate about Music, and I truly believe that passion is relayed back to my readers through the innovative and exciting content that I post.</p>
+    <p>"I love music for me, Music is morning coffee. It's mood medicine. It's pure magic. A good song is like a good meal. I just want to inhale it and then share a bite with someone else"</p>
     <br/>
-    <!-- <audio controls="controls" autoplay="autoplay" autostart="true">
-      <source src="../songs/1.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/2.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/3.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/4.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/5.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/6.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-     <source src="../songs/7.mp3" type="audio/wav"  volume="0.1" style="display: none;"></audio>
-      <source src="../songs/8.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/9.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/10.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/11.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/12.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/13.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/14.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/15.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/16.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/17.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-      <source src="../songs/18.mp3" type="audio/wav" volume="0.1" style="display: none;"></audio>
-    </audio> -->
-    <!--<ul id="playlist">
-            <li class="active">
-                <a herf="../songs/16.mp3">
-                    Lama 9'emk 39dere
-                </a>
-            </li>
-            <li>
-                <a href="http://www.archive.org/download/MoonlightSonata_755/Beethoven-MoonlightSonata.mp3">
-                    Moonlight Sonata - Beethoven
-                </a>
-            </li>
-            <li>
-                <a href="http://www.archive.org/download/CanonInD_261/CanoninD.mp3">
-                    Canon in D Pachabel
-                </a>
-            </li>
-            <li>
-                <a href="http://www.archive.org/download/PatrikbkarlChamberSymph/PatrikbkarlChamberSymph_vbr_mp3.zip">
-                    patrikbkarl chamber symph
-                </a>
-            </li>
-        </ul> -->
       </center>
+
+    <button id="mute" >Mute</button>
+    <button id="play" >Play</button>
+     <audio
+           src="../songs/10.mp3"
+           preload="auto"
+           loop="true"
+           autoplay="true"
+           id="music">
+
     <script type="text/javascript" src="./index.js"></script>
-    <button class="">Click Me!</button>
+
+
+<img src="../Pics/BrunoMars.jpg"/>
+
+    <input type="submit" name="btn"  id="btn" value="submit" disabled/>
+
+    <input type="checkbox"  onchange="document.getElementById('btn').disabled = !this.checked"/>
   </body>
 </html>
