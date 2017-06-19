@@ -10,35 +10,67 @@
 div {
     height: 200px;
     width: 50%;
-    background-color: powderblue;
 }
 </style>
  <center>
     <h1 class="katia">Music</h1>
       <marquee behavior="alternate" width="400" bgcolor="pink">Turn up the volume <3</marquee>
-    <h2>​Discover My​ Music</h2>
+    <h2>​Discover My​ Music</h2>
     <p class="normal">Get The Scoop Or Get The Top Music</p>
-    <p class="normal">​Welcome to Music.—because I have so much music I want to share with you. I’m here to make a life out of what I love. I am passionate about Music, and I truly believe that passion is relayed back to my readers through the innovative and exciting content that I post.</p>
+    <p class="normal">​Welcome to Music.—because I have so much music I want to share with you. I’m here to make a life out of what I love. I am passionate about Music, and I truly believe that passion is relayed back to my readers through the innovative and exciting content that I post.</p>
     <p>"I love music for me, Music is morning coffee. It's mood medicine. It's pure magic. A good song is like a good meal. I just want to inhale it and then share a bite with someone else"</p>
     <br/>
       </center>
+<button class="button" id="mute" >Mute</button>
 
-    <button id="mute" >Mute</button>
-    <button id="play" >Play</button>
-     <audio
+<center><img class="image" src="./pics/BrunoMars1.jpg"></center>
+
+         <audio
            src="./songs/10.mp3"
            preload="auto"
            loop="true"
            autoplay="true"
-           id="music">
-
-    <script type="text/javascript" src="./index.js"></script>
+           id="music"> </audio>
 
 
-<img src="./pics/BrunoMars1.jpg"/>
+          <h3>Contact Me</h1><br>
 
-    <input type="submit" name="btn"  id="btn" value="submit" disabled/>
 
-    <input type="checkbox"  onchange="document.getElementById('btn').disabled = !this.checked"/>
+              <form id="gform" method="POST" class="pure-form pure-form-stacked"
+              action="https://script.google.com/macros/s/AKfycbxG7Dzj-bokOji0v3zeeJ4hWhEPVqYM322Oijecd3zD4X67v9w/exec">
+
+                <fieldset class="pure-group">
+                  <label for="name" class="name-label">Name: </label>
+                  <input id="name" name="name" placeholder="What your Mom calls you" required/>
+                </fieldset>
+
+                <fieldset class="pure-group">
+                  <label for="message" class="message-label">Message: </label>
+                  <textarea id="message" name="message" rows="10"
+                  placeholder="Tell us what's on your mind..." required></textarea>
+                </fieldset>
+
+                <fieldset class="pure-group">
+                  <label for="email" class="email-label"><em>Your</em> Email Address:</label>
+                  <input id="email" name="email" type="email" value=""
+                  required placeholder="your.name@email.com"/>
+                  <span id="email-invalid" style="visibility:hidden">
+                    Must be a valid email address</span>
+                </fieldset>
+
+                <button class="button-success pure-button button-xlarge">
+                  <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+              </form>
+
+              <div style="display:none; background-color=red" id="thankyou_message">
+                <h2 class="h2-div"><em>Thanks</em> for contacting me!
+                I will get back to you soon!</h2>
+              </div>
+
+        </div>
+        <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+
+
   </body>
 </html>

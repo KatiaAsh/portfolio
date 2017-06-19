@@ -51,7 +51,7 @@ mute.addEventListener("click", function(event){
 initAudio($('#first'));
 
 function initAudio(element){
-    var song = element.attr('./songs/15.mp3');
+    var song = element.attr('./songs/10.mp3');
     var title = element.text('lama bdomik 3a sdere');
     var cover = element.attr('cover');
     var artist = element.attr('hussein al deek');
@@ -141,7 +141,94 @@ $('#playlist td:nth-child(2)').click(function() {
     $('#pause').hide();
     $('#play').show();
 });
+
 //Volume Control
 $('#volume').change(function(){
-    audio.volume = parseFloat(this.value / 10);
+   audio.volume = parseFloat(this.value / 10);
+});
+
+
+//To Hide
+//{document.getElementById("p2").style.display="none";}
+//To Show
+//{document.getElementById("p2").style.display="block";}
+
+// ------------------------------------------------------------
+
+var TO_ADDRESS = "katia.ashkar7@gmail.com"; // change this ...
+
+function formatMailBody(obj) { // function to spit out all the keys/values from the form in HTML
+  var result = "";
+  for (var key in obj) { // loop over the object passed to the function
+    result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
+    // for every key, concatenate an `<h4 />`/`<div />` pairing of the key name and its value,
+    // and append it to the `result` string created at the start.
+  }
+  return result; // once the looping is done, `result` will be one long string to put in the email body
+}
+
+function doPost(e) {
+
+  try {
+    Logger.log(e); // the Google Script version of console.log see: Class Logger
+    record_data(e);
+
+    var mailData = e.parameters; // just create a slightly nicer variable name for the data
+
+    MailApp.sendEmail({
+      to: TO_ADDRESS,
+      subject: "Contact form submitted",
+      // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
+      htmlBody: formatMailBody(mailData)
+    });
+
+    return ContentService    // return json success results
+          .createTextOutput(
+            JSON.stringify({"result":"success",
+                            "data": JSON.stringify(e.parameters) }))
+          .setMimeType(ContentService.MimeType.JSON);
+  } catch(error) { // if error return this
+    Logger.log(error);
+    return ContentService
+          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
+          .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+//---------------------
+
+function record_data(e) {
+  Logger.log(JSON.stringify(e)); // log the POST data in case we need to debug it
+  try {
+    var doc     = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet   = doc.getSheetByName('responses'); // select the responses sheet
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var nextRow = sheet.getLastRow()+1; // get next row
+    var row     = [ new Date() ]; // first element in the row should always be a timestamp
+    // loop through the header columns
+    for (var i = 1; i < headers.length; i++) { // start at 1 to avoid Timestamp column
+      if(headers[i].length > 0) {
+        row.push(e.parameter[headers[i]]); // add data to row
+      }
+    }
+    // more efficient to set values as [][] array than individually
+    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
+  }
+  catch(error) {
+    Logger.log(e);
+  }
+  finally {
+    return;
+  }
+
+}
+
+
+const sendButton = document.querySelector('.button-success');
+const thankyouMessage = document.getElementById('thankyou_message');
+const gForm = document.getElementById('gform');
+
+sendButton.addEventListener('click', function(event) {
+  gForm.style.display = 'none'
+  thankyouMessage.style.display = 'block';
 });
