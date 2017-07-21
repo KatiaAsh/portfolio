@@ -1,11 +1,11 @@
-var katia = document.querySelector(".katia");
-katia.addEventListener("click", function (event) {
+var music = document.querySelector(".music");
+music.addEventListener("click", function (event) {
   console.log('working');
-  katia.muted = true;
+  music.muted = true;
 })
 
 function checkMute() {
-    alert(katia.muted);
+    alert(music.muted);
 }
 
 function toggleSound() {
@@ -154,8 +154,6 @@ $('#volume').change(function(){
 //{document.getElementById("p2").style.display="block";}
 
 // ------------------------------------------------------------
-
-var TO_ADDRESS = "katia.ashkar7@gmail.com"; // change this ...
 
 function formatMailBody(obj) { // function to spit out all the keys/values from the form in HTML
   var result = "";
