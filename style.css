@@ -3,8 +3,13 @@
     background-color: pink;
     width: 7%
 }
+html{
+    font-family: 'Bad Script', cursive;
+}
 
-body { background-image: url("./pics/bg2.jpg");}
+body {
+  background-image: url("./pics/bg2.jpg");
+}
 
 image {
 height: 100px;
@@ -20,6 +25,7 @@ margin-top: 50px
 p {
   color: Black;
   font-size: 200%;
+  font-family: 'Bad Script', cursive;
 }
 
 .button {
@@ -44,11 +50,12 @@ p.small {
 }
 
 p {
-  font-family: serif;
+  font-family: 'Bad Script', cursive;
 }
 
  button {
- 	margin-bottom: 15px;
+   font-family: 'Bad Script', cursive;
+ 	 margin-bottom: 15px;
    border: none;
    outline: none;
    background-color: #00bfff;
