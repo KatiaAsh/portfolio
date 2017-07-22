@@ -4,7 +4,8 @@
     width: 7%
 }
 html{
-    font-family: 'Bad Script', cursive;
+    font-family: 'Sriracha', cursive;
+
 }
 
 body {
@@ -22,10 +23,10 @@ margin-top: 50px
     transition-duration: 0.4s;
 }
 
-p {
-  color: Black;
+p, h2{
+  color: #440066;
   font-size: 200%;
-  font-family: 'Bad Script', cursive;
+  font-family: 'Sriracha', cursive;
 }
 
 .button {
@@ -50,11 +51,11 @@ p.small {
 }
 
 p {
-  font-family: 'Bad Script', cursive;
+  font-family: 'Sriracha', cursive;
 }
 
  button {
-   font-family: 'Bad Script', cursive;
+   font-family: 'Sriracha', cursive;
  	 margin-bottom: 15px;
    border: none;
    outline: none;
@@ -93,14 +94,17 @@ p {
 
  .name-label {
  	font-size: 24px;
+  color: #440066;
  }
 
  .message-label {
  	font-size: 24px;
+  color: #440066;
  }
 
  .email-label {
  	font-size: 24px;
+  color: #440066;
  }
 
  .h2-div {
