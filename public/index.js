@@ -183,14 +183,14 @@ mute.addEventListener("click", function(event) {
 initAudio($('#first'));
 
 function initAudio(element) {
-  var song = element.attr('./songs/10.mp3');
+  var song = element.attr('../songs/10.mp3');
   var title = element.text('lama bdomik 3a sdere');
   var cover = element.attr('cover');
   var artist = element.attr('hussein al deek');
 
   //Create a New Audio Object
   audio = new Audio('Music/' +
-    './songs/10.mp3');
+    '../songs/10.mp3');
 
   if (!audio.currentTime) {
     $('#duration').html('0.00');
