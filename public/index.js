@@ -32,6 +32,107 @@ window.addEventListener('scroll', fixNav);
 
 // End nav bar section
 
+// openWeatherMap start weather
+
+// var weather;
+//
+// var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
+// var apiKey = '&APPID=c25c2d129996c35070daaa3925904453'
+// var units = '&units=metric'
+//
+// var input;
+//
+// function setup() {
+//
+//   var button = select('#sumbit');
+//   button,mousePressed(weatherAsk)
+//
+//   input = select('#city');
+//   console.log(input);
+//
+//   function weatherAsk() {
+//     var url = api + input.value() + apiKey + units;
+//     loadJSON(url, gotData);
+//     console.log(url);
+//   }
+// }
+//
+// function gotData(data) {
+// weather = data;
+// }
+//
+// function draw() {
+//   if(weather){
+//     var temp = weather.main.temp;
+//     var humidity = weather.main.humidity;
+//   }
+// }
+// openWeatherMap end weather
+
+// open-notify start weather partII
+
+// var lineX = 0;
+// var url = 'http://api.open-notify.org/iss-now.json'
+//
+// var issX = (width/360)*(180+long);
+// var issY = (height/360)*(90-lat);
+//
+// function setup() {
+//   setInreval(askISS, 1000);
+// }
+//
+// function askISS() {
+//   loadJSON(url, gotData, 'jsonp');
+// }
+//
+// function gotData(data){
+//   var lat = data.iss_position.latitude;
+//   var long = data.iss_position.longitude;
+//   issX = map(lat, -90, 90, 0, width);
+//   issY = map(long, -90, 90, 0, height);
+//   console.log(data);
+// }
+//
+// function draw() {
+//   background(51);
+//
+//   stroke(255);
+//   line(lineX, 0, lineX, height)
+//   line= lineX + 5;
+//   if(lineX > width) {
+//     lineX = 0;
+//   }
+// };
+
+//  open-notify end weather partII
+
+// wordnik start related Words
+
+var url1 = 'http://api.wordnik.com/v4/word.json/';
+var word =  'rainbow';
+var url2 =  '/relatedWords?useCanonical=false&limitPerRelationshipType=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+
+var link;
+
+function setup() {
+  link = createA('#', word);
+  link.mousePressed(askWordnik);
+}
+
+function askWordnik() {
+  loadJSON(url1 + word + url2, gotData);
+}
+
+function gotData() {
+  var index1 = floor(random(0, data.length));
+  var index2 = floor(random(0, data[index1].words.length));
+  word = data[index1].words[index2];
+  link.html(word);
+  console.log(word);
+}
+
+// wordnik end related Words
+
 var music = document.querySelector(".music");
 music.addEventListener("click", function(event) {
   console.log('working');
@@ -82,14 +183,14 @@ mute.addEventListener("click", function(event) {
 initAudio($('#first'));
 
 function initAudio(element) {
-  var song = element.attr('./songs/13.mp3');
+  var song = element.attr('./songs/10.mp3');
   var title = element.text('lama bdomik 3a sdere');
   var cover = element.attr('cover');
   var artist = element.attr('hussein al deek');
 
   //Create a New Audio Object
   audio = new Audio('Music/' +
-    './songs/13.mp3');
+    './songs/10.mp3');
 
   if (!audio.currentTime) {
     $('#duration').html('0.00');
